@@ -9,7 +9,11 @@
         <g-link class="nav__link" to="/about/">About</g-link>
       </nav>
     </header>
-    <slot/>
+    <transition name="fade" appear>
+      <main>
+        <slot/>
+      </main>
+    </transition>
   </div>
 </template>
 
@@ -46,5 +50,16 @@ body {
 
 .nav__link {
   margin-left: 20px;
+}
+</style>
+
+
+<style>
+.fade-enter-active {
+  transition: opacity .5s;
+}
+
+.fade-enter {
+  opacity: 0;
 }
 </style>
